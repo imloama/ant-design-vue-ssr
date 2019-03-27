@@ -4,7 +4,7 @@ import Antd from 'ant-design-vue/es'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// import 'ant-design-vue/dist/antd.css'
+import 'ant-design-vue/dist/antd.css'
 Vue.config.productionTip = false
 import { sync } from 'vuex-router-sync'
 
