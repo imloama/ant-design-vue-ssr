@@ -6,11 +6,22 @@ import router from './router'
 import store from './store'
 // import 'ant-design-vue/dist/antd.css'
 Vue.config.productionTip = false
+import { sync } from 'vuex-router-sync'
 
 Vue.use(Antd)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+// new Vue({
+//   router,
+//   store,
+//   render: h => h(App)
+// }).$mount('#app')
+
+export function createApp () {
+  sync(store, router)
+  const app = new Vue({
+    router,
+    store,
+    render: h => h(App)
+  })
+  return { app, router, store }
+}
